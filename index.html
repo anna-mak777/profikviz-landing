@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ПрофиКвиз — промышленная викторина</title>
 
-  <!-- Шрифт Manrope: основной шрифт фирстиля ПРОФТРЕКЕРА -->
+  <!-- Шрифты: Manrope (основной) + JetBrains Mono (служебные метки) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,13 +13,103 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Каркас лендинга. Секции будут добавляться поэтапно. -->
   <main class="pq-page">
-    <!-- Здесь будут блоки: hero, о проекте, задачи, галерея, новости, фото-видео, документы, форма, контакты -->
-    <section class="pq-placeholder">
-      <h1>ПрофиКвиз</h1>
-      <p>Скелет проекта создан. Содержимое лендинга будет добавляться по этапам.</p>
+
+    <!-- ═══════════ 01 HEADER ═══════════ -->
+    <header class="pq-header">
+      <div class="pq-header__inner">
+
+        <!-- Левая часть: лого ПРОФТРЕКЕР + плашка + грантодатель -->
+        <div class="pq-header__brand">
+          <a href="#top" class="pq-header__logo-link" aria-label="ПРОФТРЕКЕР">
+            <img src="images/Logo_Proftreker_dark.svg" alt="ПРОФТРЕКЕР" class="pq-header__logo">
+          </a>
+          <span class="pq-header__sub-tag">профиквиз</span>
+          <span class="pq-header__divider" aria-hidden="true"></span>
+          <div class="pq-header__support">
+            <span class="pq-mono-label">При поддержке</span>
+            <img src="images/Logo_Granty_Perv.svg" alt="Гранты Первых" class="pq-header__grantor-logo">
+          </div>
+        </div>
+
+        <!-- Навигация (центр) -->
+        <nav class="pq-header__nav" aria-label="Главное меню">
+          <a href="#about" class="pq-header__nav-link">О проекте</a>
+          <a href="#how" class="pq-header__nav-link">Как играть</a>
+          <a href="#audience" class="pq-header__nav-link">Для кого</a>
+          <a href="#partners" class="pq-header__nav-link">Партнёры</a>
+          <a href="#documents" class="pq-header__nav-link">Документы</a>
+        </nav>
+
+        <!-- CTA (secondary, контурная) -->
+        <a href="#register" class="pq-btn pq-btn--outline">
+          Зарегистрироваться
+          <span class="pq-btn__arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </header>
+
+    <!-- ═══════════ 02 HERO ═══════════ -->
+    <section class="pq-hero" id="top">
+      <div class="pq-hero__inner">
+
+        <div class="pq-hero__content">
+
+          <!-- Служебная метка -->
+          <div class="pq-section-label">
+            <span class="pq-section-label__dash" aria-hidden="true">━━</span>
+            <span>Промышленная викторина детей и молодёжи · Свердловская область</span>
+          </div>
+
+          <!-- Главный заголовок -->
+          <h1 class="pq-hero__title">Играй и выбирай профессию</h1>
+
+          <!-- Описание -->
+          <p class="pq-hero__lead">
+            ПрофиКвиз — проект для школьников и студентов СПО 12–18 лет.
+            За 2,5 часа 80 участников смогут познакомиться со 160 профессиями,
+            научиться действовать в команде, презентовать свои идеи.
+            Викторина поможет определить «знатоков профессии» и участников
+            Финального фестиваля, который состоится в ноябре в Екатеринбурге.
+          </p>
+
+          <!-- Кнопки CTA -->
+          <div class="pq-hero__ctas">
+            <a href="#register" class="pq-btn pq-btn--primary">
+              Зарегистрироваться на игру
+              <span class="pq-btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#how" class="pq-hero__secondary-cta">
+              Посмотреть, как проходит игра
+            </a>
+          </div>
+
+          <!-- Social proof: «уже играли с нами» -->
+          <div class="pq-hero__social-proof">
+            <div class="pq-mono-label">Уже играли с нами</div>
+            <div class="pq-hero__logos">
+              <!-- TODO: заменить на реальные логотипы организаций, уже игравших с ПРОФТРЕКЕРОМ -->
+              <div class="pq-logo-placeholder">логотип 01</div>
+              <div class="pq-logo-placeholder">логотип 02</div>
+              <div class="pq-logo-placeholder">логотип 03</div>
+              <div class="pq-logo-placeholder">логотип 04</div>
+              <div class="pq-logo-placeholder">логотип 05</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Визуал справа -->
+        <div class="pq-hero__visual">
+          <img src="images/cards1.jpg" alt="Карты профессий ПрофиКвиз — реальные рабочие и инженерные профессии Свердловской области">
+        </div>
+
+      </div>
     </section>
+
+    <!-- TODO: секции 03–15 будут добавлены поэтапно (см. памятки/структура-секций.md) -->
+
   </main>
 
   <script src="js/main.js"></script>
