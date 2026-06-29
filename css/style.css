@@ -4,6 +4,36 @@
    конфликтовать со стилями Тильды при встраивании.
    ============================================================ */
 
+/* ─── Палитра (брендбук ПРОФТРЕКЕРА) ─────────────────────── */
+:root {
+  /* Фоны */
+  --pq-bg-white:        #FBFBFA;  /* почти-белый, базовый */
+  --pq-bg-light-gray:   #F5F0EC;  /* светло-серый */
+  --pq-bg-gray:         #E8E5E4;  /* серый */
+  --pq-bg-light-beige:  #EDDDC9;  /* светлый бежевый */
+  --pq-bg-warm-beige:   #E5BE9B;  /* тёплый бежевый */
+  --pq-bg-lilac:        #E1B5E3;  /* лиловый */
+  --pq-bg-dark:         #31263B;  /* тёмно-фиолетовый (баклажан) */
+
+  /* Акценты */
+  --pq-accent-magenta:  #FF3770;  /* малиновый — главный CTA */
+  --pq-accent-orange:   #FF9059;  /* оранжевый — второй акцент */
+  --pq-accent-yellow:   #FFBD5B;  /* жёлто-оранжевый — декор */
+  --pq-accent-brown:    #A9765A;  /* коричневый — тёплые акценты */
+  --pq-accent-burgundy: #5B3043;  /* бордовый — тёмные акценты */
+
+  /* Текст */
+  --pq-text-main:       #31263B;  /* основной */
+  --pq-text-muted:      #564C61;  /* приглушённый (из wireframe) */
+  --pq-text-on-dark:    #FBFBFA;  /* на тёмном фоне */
+
+  /* Разделители */
+  --pq-border-light:    #E5D9C5;
+  --pq-border-soft:     #D4C5AC;
+  --pq-border-strong:   #31263B;
+}
+
+/* ─── База ──────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +42,12 @@
 
 .pq-page {
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #31263B;
-  background: #F0E4D2;
+  color: var(--pq-text-main);
+  background: var(--pq-bg-white);
   min-height: 100vh;
 }
 
-/* Временный стартовый блок-заглушка — удалить, когда появятся настоящие секции */
+/* ─── Временная заглушка (удалить, когда появятся секции) ─ */
 .pq-placeholder {
   display: flex;
   flex-direction: column;
@@ -31,7 +61,7 @@
 .pq-placeholder h1 {
   font-size: 56px;
   font-weight: 800;
-  color: #FF3770;
+  color: var(--pq-accent-magenta);
   margin-bottom: 16px;
 }
 
@@ -39,4 +69,5 @@
   font-size: 18px;
   font-weight: 400;
   max-width: 520px;
+  color: var(--pq-text-muted);
 }
