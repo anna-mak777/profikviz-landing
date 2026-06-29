@@ -1,0 +1,42 @@
+/* ============================================================
+   ПрофиКвиз — стили лендинга
+   Все классы — с префиксом pq- (project quiz), чтобы не
+   конфликтовать со стилями Тильды при встраивании.
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pq-page {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #31263B;
+  background: #F0E4D2;
+  min-height: 100vh;
+}
+
+/* Временный стартовый блок-заглушка — удалить, когда появятся настоящие секции */
+.pq-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.pq-placeholder h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: #FF3770;
+  margin-bottom: 16px;
+}
+
+.pq-placeholder p {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 520px;
+}

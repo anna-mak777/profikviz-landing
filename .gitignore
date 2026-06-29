@@ -1,0 +1,25 @@
+# Системное
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Логи
+*.log
+
+# Секреты (на будущее, если появятся)
+.env
+.env.local
+*.key
+*.pem
+
+# Сборка (если появится)
+dist/
+build/
+.cache/
+node_modules/
