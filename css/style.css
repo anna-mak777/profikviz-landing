@@ -352,9 +352,19 @@ img {
   justify-content: space-between;
   gap: 32px;
 }
-.pq-header__brand { display: flex; align-items: center; gap: 14px; }
-.pq-header__logo-link { display: inline-flex; align-items: center; }
-.pq-header__logo { height: 48px; width: auto; }
+.pq-header__brand { display: flex; align-items: center; }
+.pq-header__brand-link {
+  font-family: var(--pq-font-main);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--pq-text-main);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.pq-header__brand-link:hover { color: var(--pq-accent-magenta); }
 .pq-header__nav {
   display: flex;
   align-items: center;
