@@ -270,21 +270,6 @@ img {
   color: var(--pq-text-main);
 }
 
-.pq-square-icon--house::after {
-  content: '';
-  width: 24px;
-  height: 18px;
-  border: 1.5px solid var(--pq-text-main);
-  border-bottom: none;
-}
-.pq-square-icon--school::after {
-  content: '';
-  width: 24px;
-  height: 22px;
-  border: 1.5px solid var(--pq-text-main);
-  border-top-width: 6px;
-}
-
 /* ═════════════════════════════════════════════════════════ */
 /*                       КНОПКИ                               */
 /* ═════════════════════════════════════════════════════════ */
@@ -424,9 +409,10 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 64px;
-  align-items: start;
+  align-items: stretch;
 }
 .pq-hero__content { display: flex; flex-direction: column; }
+.pq-hero__social-proof { margin-top: auto; }
 .pq-hero__title {
   font-family: var(--pq-font-main);
   font-weight: 800;
@@ -444,13 +430,13 @@ img {
   line-height: 1.5;
   color: var(--pq-text-muted);
   max-width: 640px;
-  margin-bottom: 44px;
+  margin-bottom: 32px;
 }
 .pq-hero__ctas {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 .pq-hero__secondary-cta {
@@ -473,12 +459,23 @@ img {
   flex-wrap: wrap;
 }
 .pq-hero__logos {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 32px;
+  row-gap: 20px;
   align-items: center;
+  justify-items: start;
   flex: 1;
-  flex-wrap: wrap;
 }
+.pq-hero__logo {
+  height: 26px;
+  width: auto;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.pq-hero__logo:hover { opacity: 1; }
+.pq-hero__logo--tall { height: 40px; }
 .pq-hero__visual {
   display: flex;
   align-items: center;
@@ -756,7 +753,6 @@ img {
 }
 .pq-series-card {
   background: var(--pq-bg-white);
-  border: 1.5px solid var(--pq-text-main);
   padding: 40px;
   border-radius: 14px;
   display: flex;
@@ -765,6 +761,11 @@ img {
 }
 .pq-series-card--summer { background: var(--pq-bg-warm-beige); }
 .pq-series-card--autumn { background: var(--pq-bg-lilac); }
+.pq-series-card__icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
 .pq-series-card__head {
   display: flex;
   justify-content: space-between;
