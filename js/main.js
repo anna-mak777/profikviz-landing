@@ -35,4 +35,38 @@
       }
     });
   }
+
+  // ─── Слайдер экранов смартфона в блоке Викторины ───
+  var phoneSlides = document.querySelectorAll('.pq-phone__slide');
+  var phoneDots = document.querySelectorAll('.pq-phone__dot');
+
+  if (phoneSlides.length > 1 && phoneDots.length === phoneSlides.length) {
+    var current = 0;
+    var autoplayId = null;
+
+    var showSlide = function (i) {
+      phoneSlides.forEach(function (s, n) { s.classList.toggle('is-active', n === i); });
+      phoneDots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); });
+      current = i;
+    };
+
+    var startAutoplay = function () {
+      autoplayId = setInterval(function () {
+        showSlide((current + 1) % phoneSlides.length);
+      }, 5000);
+    };
+    var stopAutoplay = function () {
+      if (autoplayId) { clearInterval(autoplayId); autoplayId = null; }
+    };
+
+    phoneDots.forEach(function (dot, n) {
+      dot.addEventListener('click', function () {
+        stopAutoplay();
+        showSlide(n);
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+  }
 })();
