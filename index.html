@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ПрофиКвиз — промышленная викторина</title>
+  <meta name="description" content="Промышленная викторина для подростков 12–18 лет в Свердловской области. 80 участников за 2,5 часа знакомятся со 160 профессиями.">
+
+  <!-- Иконки -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Open Graph / соцсети -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ПрофиКвиз — промышленная викторина">
+  <meta property="og:description" content="Играй и выбирай профессию. Викторина для школьников и студентов СПО 12–18 лет.">
+  <meta property="og:image" content="https://proftreker.ru/profiquiz/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://proftreker.ru/profiquiz">
+  <meta property="og:site_name" content="ПрофиКвиз">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Шрифты: Manrope (основной) + JetBrains Mono (служебные метки) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,17 +40,23 @@
             <img src="images/Logo_Proftreker_dark.svg" alt="ПРОФТРЕКЕР" class="pq-header__logo">
           </a>
         </div>
-        <nav class="pq-header__nav" aria-label="Главное меню">
+        <button class="pq-header__burger" type="button"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="pq-main-nav">
+          <span class="pq-header__burger-line"></span>
+          <span class="pq-header__burger-line"></span>
+          <span class="pq-header__burger-line"></span>
+        </button>
+        <nav class="pq-header__nav" id="pq-main-nav" aria-label="Главное меню">
           <a href="#about" class="pq-header__nav-link">О проекте</a>
           <a href="#how" class="pq-header__nav-link">Как играть</a>
           <a href="#audience" class="pq-header__nav-link">Для кого</a>
           <a href="#partners" class="pq-header__nav-link">Партнёры</a>
           <a href="#documents" class="pq-header__nav-link">Документы</a>
+          <a href="#register" class="pq-btn pq-btn--outline pq-header__nav-cta">
+            Зарегистрироваться
+            <span class="pq-btn__arrow" aria-hidden="true">→</span>
+          </a>
         </nav>
-        <a href="#register" class="pq-btn pq-btn--outline">
-          Зарегистрироваться
-          <span class="pq-btn__arrow" aria-hidden="true">→</span>
-        </a>
       </div>
     </header>
 

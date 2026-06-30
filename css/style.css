@@ -370,7 +370,11 @@ img {
 .pq-header__brand { display: flex; align-items: center; gap: 14px; }
 .pq-header__logo-link { display: inline-flex; align-items: center; }
 .pq-header__logo { height: 48px; width: auto; }
-.pq-header__nav { display: flex; gap: 28px; }
+.pq-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
 .pq-header__nav-link {
   font-family: var(--pq-font-main);
   font-weight: 500;
@@ -380,6 +384,33 @@ img {
   transition: color 0.15s ease;
 }
 .pq-header__nav-link:hover { color: var(--pq-accent-magenta); }
+/* CTA-кнопка внутри nav: на десктопе слева — небольшой отступ, на мобильном — растянуть */
+.pq-header__nav-cta { margin-left: 4px; }
+
+/* Бургер — на десктопе скрыт */
+.pq-header__burger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--pq-border-light);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.pq-header__burger-line {
+  display: block;
+  height: 2px;
+  background: var(--pq-text-main);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+.pq-header__burger:hover { border-color: var(--pq-accent-magenta); }
+.pq-header__burger:hover .pq-header__burger-line { background: var(--pq-accent-magenta); }
 
 /* ═════════════════════════════════════════════════════════ */
 /*                        02 HERO                             */
@@ -1140,14 +1171,49 @@ img {
 }
 
 @media (max-width: 860px) {
-  .pq-header__inner { flex-wrap: wrap; gap: 16px; }
+  /* Бургер вместо горизонтального меню */
+  .pq-header__burger { display: flex; }
+
   .pq-header__nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--pq-bg-white);
     border-top: 1px solid var(--pq-border-light);
-    padding-top: 16px;
-    flex-wrap: wrap;
+    border-bottom: 1px solid var(--pq-border-light);
+    padding: 8px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .pq-header.is-menu-open .pq-header__nav {
+    max-height: 90vh;
+    padding: 12px 0 20px;
+  }
+  .pq-header__nav-link {
+    padding: 14px var(--pq-section-padding-x);
+    font-size: 16px;
+    border-bottom: 1px solid var(--pq-border-light);
+  }
+  .pq-header__nav-link:last-of-type { border-bottom: none; }
+  .pq-header__nav-cta {
+    margin: 16px var(--pq-section-padding-x) 4px;
+    justify-content: center;
+  }
+
+  /* Анимация бургер → крестик */
+  .pq-header.is-menu-open .pq-header__burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .pq-header.is-menu-open .pq-header__burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .pq-header.is-menu-open .pq-header__burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .pq-hero__inner,
