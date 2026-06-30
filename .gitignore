@@ -23,3 +23,7 @@ dist/
 build/
 .cache/
 node_modules/
+
+# Внутренние материалы — лежат в отдельном приватном репо profikviz-private
+памятки/
+референсы/
